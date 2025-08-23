@@ -16,5 +16,4 @@
 # Add a feed source
 echo 'src-git helloworld https://github.com/fw876/helloworld.git' >>feeds.conf.default
 echo 'src-git smpackage https://github.com/kenzok8/small-package' >>feeds.conf.default
-sed -i 's/--set=llvm\.download-ci-llvm=true/--set=llvm.download-ci-llvm=false/' feeds/packages/lang/rust/Makefile
 #echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
