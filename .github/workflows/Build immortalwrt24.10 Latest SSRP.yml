@@ -119,13 +119,14 @@ jobs:
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
 
-  #  - name: Setup upterm session
-  #    uses: lhotari/action-upterm@v1
-    #  with:
+    - name: Setup upterm session
+      timeout-minutes: 15  # 步骤级超时，超过15分钟强制终止
+      uses: lhotari/action-upterm@v1
+      with:
         # 限制仅允许触发工作流的用户连接，提高安全性
-      #  limit-access-to-actor: true
+        limit-access-to-actor: true
         # 如果超过时间没有连接，任务将继续执行或失败，单位是分钟
-    #    wait-timeout: 15
+        wait-timeout: 15
 
     - name: Compile the firmware
       id: compile
